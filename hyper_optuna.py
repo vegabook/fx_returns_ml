@@ -33,8 +33,6 @@ target_column = np.where(np.array(tickers) == "XBT")[0][0]
 ny = returns[:, target_column]         
 nX = np.delete(returns, target_column, axis = 1)
 
-breakpoint()
-
 # Convert to PyTorch tensors
 X = torch.tensor(nX)        
 y = torch.tensor(ny)       
