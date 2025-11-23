@@ -1,0 +1,16 @@
+[project]
+name = "gBLP"
+version = "0.1.0"
+description = "gBLP Bloomberg gRPC server"
+authors = ["Vegabook"]
+requires-python = ">=3.12"
+dependencies = [
+    "ipython>=9.7.0",
+    "loguru>=0.7.3",
+    "numpy>=2.3.4",
+    "optuna>=4.6.0",
+    "pandas>=2.3.3",
+    "pip>=25.3",
+    "polars>=1.35.2",
+    "torch>=2.9.1",
+]

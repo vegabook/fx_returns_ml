@@ -1,3 +1,4 @@
+{ 
   description = "Develop Python on Nix with uv";
 
   inputs = {
