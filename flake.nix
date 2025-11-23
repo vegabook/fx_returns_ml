@@ -34,7 +34,7 @@
               if [ -z "$NIX_SHELL_NESTED" ]; then
                 export NIX_SHELL_NESTED=1
                 alias ipy="uv run ipython --nosep"
-                export PS1="🧢 \e[38;5;211m\]g\e[38;5;111mBLP\[\e[0m $PS1"
+                export PS1="🥥 \e[38;5;15m\]fx\e[38;5;58mneural\[\e[0m $PS1"
                 if [ ! -d .venv ]; then
                   echo "Running uv init, adding ipython and pip"
                   uv init .
@@ -44,7 +44,7 @@
                 uv run pip list
               else
                 alias ipy="uv run ipython --nosep"
-                export PS1="🧢 \e[38;5;211m\]g\e[38;5;111mBLP\[\e[0m [NESTED] $PS1"
+                export PS1="🥥 \e[38;5;15m\]g\e[38;5;58mBLP\[\e[0m [NESTED] $PS1"
                 echo "Nested nix-shell detected, skipping uv init"
               fi
             '';
