@@ -82,7 +82,16 @@ def objective(trial):
     train_loader = DataLoader(TensorDataset(X_train, y_train), batch_size=batch_size, shuffle=True)
     val_loader   = DataLoader(TensorDataset(X_val,   y_val),   batch_size=batch_size, shuffle=False)
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if torch.backends.mps.is_available():
+        print("using metal")
+        device = torch.device("mps")
+    elif torch.cuda.is_available():
+        print("using cuda")
+        device = torch.device("cuda")
+    else:
+        print("using cpu")
+        device = torch.device("cpu")
+
     model = SameDayPredictor(X.shape[1], layers, act, dropout, layernorm).to(device)
     opt   = optim.Adam(model.parameters(), lr=lr, weight_decay=wd)
     crit  = nn.MSELoss()
